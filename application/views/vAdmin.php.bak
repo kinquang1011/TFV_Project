@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><?php echo $title?></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/template_style.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/editor.css" type="text/css" rel="stylesheet"/>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+	<script src="js/editor.js"></script>
+	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
+	<script src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>	
+	<script src="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.js"></script>	
+	<script type="text/javascript">
+		$(document).ready(function() {
+		$('#example').dataTable();
+		});
+	</script>
+</head>
+<body>
+<!-- Ajax to load SubCatalogy for insert data to db -->
+	<script language="javascript"><!--
+	function createObject() {
+	var request_type;
+	var browser = navigator.appName;
+	if(browser == "Microsoft Internet Explorer"){
+	request_type = new ActiveXObject("Microsoft.XMLHTTP");
+	}else{
+	request_type = new XMLHttpRequest();
+	}
+	return request_type;
+	}
+	var http = createObject();
+	function level2(id)
+	{
+		http.open('get',"http://localhost/TFV_Project/index.php/admin/thu-muc-con/"+id);
+		http.onreadystatechange= process;
+		http.send(null);
+	}
+
+	function process()
+	{
+		if(http.readyState == 4 && http.status == 200)
+		{
+			result= http.responseText;
+			document.getElementById('level2').innerHTML= result;
+		}
+	}
+	--></script>
+<div id="mybody">
+	<?php $this->load->view("layout/top");?> 
+	
+	<!-- 3@ Start of MYCONTAINER-->
+	<div class="container">	
+		<!-- Start of Content-->	
+		<div class="row">
+			<div class="col-lg-16 nopadding">
+				<div id="mycenter_admin">
+					<h2>Khu vực cấm trẻ em dưới 18+</h2>
+					<div class="bs-example">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="<?php echo base_url()."admin" ; ?>">Admin</a></li>
+							<li><a href="<?php echo base_url()."admin/AddArticle" ; ?>">Add new Article</a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="mypost_info_admin" class="tab-pane fade in active">						
+								<div class="row">
+									<form class="form-inline" role="form">
+										<div class="col-xs-5 text-right">
+											<div class="form-group ">
+												<label for="usr">Catalogy: </label> 						
+												<select id="uniqueId" name="fieldName" class="optional overall classes" onchange="level2(this.value)">
+													<?php										
+														for($i =2; $i<count($menu); $i++)
+														{ 
+															?>
+																<option value='<?php echo$menu[$i]['CodeCatalogy'] ?>'><?php echo $menu[$i]['name']; ?></option>
+													<?php 	}	
+													?>
+												</select>									
+											</div>							
+										</div>
+										<div class="col-xs-1">
+										</div>
+										<div class="col-xs-4" id="level2">
+											<div class="form-group">
+													<label for="pwd">Sub Catalogy: </label>
+													<select id="uniqueId" name="fieldName" class="optional overall classes">
+														<?php	
+															for($i =0; $i< count($listDanhMucCon); $i++)
+															{?>
+																<option value='$i'><?php print_r($listDanhMucCon[$i]['Name'])?></option><?php 
+															}						
+														?>
+													</select>
+												</div>
+										</div>
+									</form>
+								</div>
+								<table class="table table-bordered table-condensed table-hover">
+									<thead>
+									  <tr class="success" >
+										<th width="60px">ID</th>
+										<th width="153px">Date Time</th>
+										<th width="400px">Title</th>
+										<th width="400px">Content</th>
+										<th width="65px">Priority</th>
+										<th width="85px">Feature</th>
+									  </tr>
+									</thead>
+									<tbody>
+									<?php
+										for($i=1; $i<11; $i++)
+										{
+											$dateTime=date('Y-m-d H:i:s');
+											echo 	"<tr>
+													<td>$i</td>
+													<td>$dateTime</td>
+													<td>Anna</td>
+													<td>Anna</td>
+													<td>
+														<div class='radio'>
+															<label><input type='radio'></label>
+														</div>
+													</td>
+													<td>
+													<a href='#'><img src='http://localhost/TFV_Project/public/images/pencil-icon.png' alt='image'/></a>
+													<a href='#'><img src='http://localhost/TFV_Project/public/images/green-cross-icon.png' alt='image'/></a>
+													</td>
+													</tr>";
+										}
+									?>												
+									</tbody>
+								</table>
+							</div>
+							<div id="mypost_info_addarticle" class="tab-pane fade">	
+								<form class="form" role="form">
+									<div class="row">
+										<form class="form-inline" role="form">
+											<div class="col-xs-5 text-right">
+												<div class="form-group ">
+													<label for="usr">Catalogy: </label> 						
+													<select id="uniqueId" name="fieldName" class="optional overall classes">
+														<?php										
+															for($i =0; $i< 6; $i++)
+															{
+																echo "<option value='$i'>choose $i</option>";
+															}	
+														?>
+													</select>									
+												</div>							
+											</div>
+											<div class="col-xs-1">
+											</div>
+											<div class="col-xs-4">
+												<div class="form-group">
+													<label for="pwd">Sub Catalogy: </label>
+													<select id="uniqueId" name="fieldName" class="optional overall classes">
+														<?php									
+															for($i =0; $i< 6; $i++)
+															{
+																echo "<option value='$i'>choose $i</option>";
+															}						
+														?>
+													</select>
+												</div>
+											</div>
+										</form>
+									</div>
+								
+									<div class="checkbox">
+										<label><input type="checkbox">Priority</label>
+									</div>
+								</form>					
+								
+								<form class="form" role="form">
+									<div class="form-group">
+									  <label for="title" >Title of article: </label>
+									  <input type="title" class="form-control" id="title"  placeholder="Enter title of article">
+									</div>
+								</form>
+								
+								<form class="form" role="form">
+									<div class="form-group">
+										<label for="txtEditor">Choose datetime for article:</label>
+										<textarea id="txtEditor"></textarea> 
+									</div>
+								</form>
+								
+								<form class="form" role="form">
+									<div class="form-group">
+										<label for="txtEditor">Enter content of article: </label>
+										<textarea id="txtEditor"></textarea> 
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- End of Content-->
+	</div>		
+	<!-- 3@ End of MYCONTAINER-->
+</div>
+</body>
+</html>

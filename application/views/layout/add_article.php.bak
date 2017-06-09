@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="http://localhost/TFV_Project/public/css/template_style.css" rel="stylesheet" type="text/css" />
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://localhost/TFV_Project/public/css/editor.css" type="text/css" rel="stylesheet"/>
+	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="http://localhost/TFV_Project/public/js/editor.js"></script>	
+	<script src="http://localhost/TFV_Project/public/jsbootstrap-datetimepicker.js"></script>
+	<script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('.glyphicon.glyphicon-calendar').datepicker({
+                    format: "dd/mm/yyyy"
+                });  
+            
+            });
+        </script>	
+	<script type="text/javascript">
+	$(document).ready( function() {
+		
+	 $("#txtEditor").Editor();                    
+	 
+    });
+	</script>
+</head>
+<body>
+<div id="mybody">
+	<?php include 'top.php';?>
+	
+	<!-- 3@ Start of MYCONTAINER-->
+	<div class="container">	
+		<!-- Start of Content-->	
+		<div class="row">
+			<div class="col-lg-12 nopadding">
+				<div id="mycenter_admin">		
+					<h2>Khu vực cấm trẻ em dưới 18+</h2>
+					<div id="mypost_info">	
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<label for="usr">Catalogy: </label>
+								<select id="uniqueId" name="fieldName" class="optional overall classes" data-btn-class="option toggle classes">
+									<?php										
+										for($i =0; $i< 6; $i++)
+										{
+											echo "<option value='$i'>choose $i</option>";
+										}	
+									?>
+								</select>
+							</div>
+						</form>
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<label for="pwd">Sub Catalogy: </label>
+								<select id="uniqueId" name="fieldName" class="optional overall classes" data-btn-class="option toggle classes">
+									<?php									
+										for($i =0; $i< 6; $i++)
+										{
+											echo "<option value='$i'>choose $i</option>";
+										}						
+									?>
+								</select>
+							</div>
+						</form>
+						<form class="form-inline" role="form">
+							<div class="radio">
+								<label><input type="radio">Priority: </label>
+							</div>
+						</form>					
+						
+						<form class="form" role="form">
+							<div class="form-group">
+							  <label for="title" >Title of article: </label>
+							  <input type="title" class="form-control" id="title"  placeholder="Enter title of article">
+							</div>
+						</form>
+						
+						<form class="form" role="form">
+							<div class="form-group">
+								<label for="txtEditor">Choose datetime for article:</label>
+								<textarea id="txtEditor"></textarea> 
+							</div>
+						</form>
+						
+						<form class="form" role="form">
+							<div class="form-group">
+								<label for="txtEditor">Enter content of article: </label>
+								<textarea id="txtEditor"></textarea> 
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- End of Content-->
+	</div>		
+
+	<!-- 3@ End of MYCONTAINER-->
+		
+</div>
+</body>
+</html>
