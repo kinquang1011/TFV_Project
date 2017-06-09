@@ -1,11 +1,12 @@
 ﻿<!-- 4@ Start of Footer-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <div class="container">		
 	<div id="myfooter" style="font-size: 16px;">
 		<div class="row" style="color: #F0FFFF;">
 			<div class="col-md-4">
 				<h2>Giới Thiệu</h2>
 				<ul>
-					<p style="color: #F0FFFF;">TVF là một trong những đơn vị tư vấn hàng đầu trong p̃nh vực thực phẩm.
+					<p style="color: #F0FFFF;">TFV là một trong những đơn vị tư vấn hàng đầu trong p̃nh vực thực phẩm.
 						Chúng tôi luôn tự hào là nơi mang tới sự tin cậy cho khách hàng.</p>
 				</ul>	
 			</div>
