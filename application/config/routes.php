@@ -47,8 +47,9 @@ $route['home/tin-tuc/(:any)'] = "home/index2/$1";
 $route['admin/thu-muc-con/(:any)'] = "admin/loadSubCatalogy/$1";
 $route['^home/an-toan-thuc-pham$'] = '/home/antoanthucpham';
 $route['^home/cong-bo-thuc-pham$'] = '/home/congbothucpham';
-$route['^home/van-ban-phap-luat-kinh-doanh$'] = '/home/vanbanphapluat';
+$route['^home/van-ban-phap-luat$'] = '/home/vanbanphapluat';
 $route['^home/dich-vu-khac$'] = '/home/dichvukhac';
+$route['home/tin-tuc-danh-muc/(:any)'] = "home/tin_tuc_theo_danh_muc/$1";
 
 
 

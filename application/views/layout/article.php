@@ -1,8 +1,33 @@
 ﻿<div id="myarticleround">
-	<div class="myarticle">
-		<img src="http://localhost/TFV_Project/public/images/cat04.jpg" alt="image" width="130" height="100"/>
-		
-		<a href="<?php echo base_url()."home/baiviet/". $baiViet['ID']?>" class="nounderline"><h4><?php echo $baiViet['Title'];?></h4></a>
-		<p><?php echo  preg_replace("/<img[^>]+\>/i", "",word_limiter($baiViet['Content'], 26));?></p>
-	</div>
+    <div class="myarticle">
+        <div class="divtintucimg">
+            <?php
+            $doc = new DOMDocument();
+            libxml_use_internal_errors(true);
+            $doc->loadHTML($baiViet['Content']);
+            $xpath = new DOMXPath($doc);
+            $src = $xpath->evaluate("string(//img/@src)");
+            ?>
+            <?php if ($src == "") { ?>
+                <img src="" alt="image" class='resize_fit_center'/>
+            <?php } else { ?>
+                <img src="<?php echo $src ?>" alt="image" class='resize_fit_center'/><?php } ?>
+        </div>
+        <a href="<?php echo base_url() . "home/baiviet/" . $baiViet['ID'] ?>" class="nounderline">
+            <h4 class="xyz"><?php echo $baiViet['Title']; ?></h4></a>
+        <p class="description_baiviet">
+            <?php $str = strip_tags($baiViet['Content']);
+            echo word_limiter($str, 26);
+            ?>
+
+        </p>
+    </div>
 </div>
+<script type="text/javascript">
+    if ($(window).width() < 600) {
+        $('.description_baiviet').hide();
+        $('.xyz').addClass('title_tintuc');
+    }
+</script>
+
+
