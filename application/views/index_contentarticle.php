@@ -19,7 +19,7 @@
     <?php $this->load->view("layout/menu"); ?>
 
 
-    <div class="container">
+    <div class="container" id ="container_ly">
         <?php $this->load->view("layout/center_contentarticle"); ?>
         <?php $this->load->view("layout/right"); ?>
     </div>

@@ -1,5 +1,5 @@
 ﻿<!-- 3.1.1@ Start of Center_Article (Tin tức)-->
-<div class="col-xs-12 col-md-8 col-lg-8">
+<div class="col-xs-12 col-md-9 col-lg-9">
     <div id="myarticlefull">
         <div id="mycontentarticle">
             <h3><?php echo($baiViet->Title); ?></h3>

@@ -16,7 +16,6 @@ class Home extends CI_Controller
     //Trang chủ
     public function index()
     {
-
         $data->title = "Trang chủ";
         $data->menu = $this->MDanhmuc->getAllDanhmuc();
         //print_r($data->menu);
@@ -162,5 +161,8 @@ class Home extends CI_Controller
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy("CC05");
         $data->loadRightArticle = $this->MBaiviet->getRandomBaiViet();
         $this->load->view("layout_group", $data);
+    }
+    public function test(){
+        $this->load->view("test");
     }
 }

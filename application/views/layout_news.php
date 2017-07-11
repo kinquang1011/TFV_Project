@@ -23,7 +23,7 @@
 
     <!-- Start of Content-->
 
-    <div class="container" id="mycontent">
+    <div class="container" id ="container_ly">
         <?php $this->load->view("layout/center_article"); ?>
 
         <?php $this->load->view("layout/right"); ?>

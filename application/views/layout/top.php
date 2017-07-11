@@ -21,6 +21,7 @@
             <div class="item">
                 <img src="http://localhost/TFV_Project/public/images/v3.jpeg" alt="Flower">
             </div>
+
         </div>
 
         <!-- Left and right controls -->

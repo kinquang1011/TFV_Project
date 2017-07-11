@@ -165,19 +165,21 @@ ul p:hover{
 	overflow: hidden;
 	height: 95px;
 }
+#testma {
+	font-family: "Times New Roman", Times, serif;
+}
 #myarticleround{
 	height: 120px;
 	margin: 0 5px 0 5px;
 	border-bottom: 1px dashed green;
 }
-#mycontent{
-	margin-right: 0px;
-	margin-bottom: 10px;
-}
 .resize_fit_center {
 	max-width:100%;
 	max-height:100%;
 	vertical-align: middle;
+}
+#container_ly {
+margin-bottom: 10px;
 }
 #mygroup{
 	border-top: 5px solid Honeydew;
@@ -340,13 +342,19 @@ ul p:hover{
 }
 
 #myrightcontact{
-	height: auto;
+	height:253px;
+	width:253px;
 }
 
 #myrightboss{
 	height: auto;
 }
-
+#counter{
+	font-weight: bold;
+	color: red;
+	margin-left: 10px;
+	font-family:'Cookie',cursive;
+}
 #myfooter {
 	/*background: url("http://giayphepthucpham.vn/public/images/v1.jpeg") no-repeat scroll center top / 100% 100%;*/
 	background-color: green;
