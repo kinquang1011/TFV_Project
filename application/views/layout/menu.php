@@ -18,8 +18,8 @@
             $i = 0;
             $ilen = count($menu);
             ?>
-            <?php foreach ($menu as $m) {
-                if (++$i == $ilen) break; ?>
+            <?php foreach ($menu as $m) {?>
+
                 <li class="mybuttonmenu">
                     <a href="<?php echo base_url() . "home/" . mb_strtolower(url_title(removesign($m['Name']))); ?>">
                         <?php echo $m['Name']; ?>

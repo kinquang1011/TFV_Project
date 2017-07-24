@@ -50,6 +50,7 @@ $route['^home/cong-bo-thuc-pham$'] = '/home/congbothucpham';
 $route['^home/van-ban-phap-luat$'] = '/home/vanbanphapluat';
 $route['^home/dich-vu-khac$'] = '/home/dichvukhac';
 $route['home/tin-tuc-danh-muc/(:any)'] = "home/tin_tuc_theo_danh_muc/$1";
+$route['^home/giay-phep-thuc-pham$'] = '/home/giayphep';
 
 
 

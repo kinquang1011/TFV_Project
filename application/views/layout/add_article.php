@@ -40,7 +40,7 @@
 		<div class="row">
 			<div class="col-lg-12 nopadding">
 				<div id="mycenter_admin">		
-					<h2>Khu vực cấm trẻ em dưới 18+</h2>
+					<h2>Admin Page</h2>
 					<div class="bs-example">
 						<ul class="nav nav-tabs">
 							<li><a href="admin.php">Admin</a></li>

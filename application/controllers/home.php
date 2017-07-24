@@ -162,7 +162,22 @@ class Home extends CI_Controller
         $data->loadRightArticle = $this->MBaiviet->getRandomBaiViet();
         $this->load->view("layout_group", $data);
     }
-    public function test(){
-        $this->load->view("test");
+    public function giayphep(){
+        $data->title = "Giấy phép thực phẩm";
+        $this->load->library('pagination');
+        $this->load->helper('url');
+
+        $config['base_url'] = base_url('home/tin-tuc'); // xác định trang phân trang
+        $config['total_rows'] = $this->MBaiviet->countTinTuc(); // xác định tổng số record
+        $config['per_page'] = 6; // xác định số record ở mỗi trang
+        $config['uri_segment'] = 3; // xác định segment chứa page number
+        $this->pagination->initialize($config);
+
+        $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucCon();
+        $data->baiVietCungChuyenMuc = $this->MBaiviet->getBaiVietCungChuyenMuc("CSC18", "0");
+        $data->loadRightArticle = $data->baiVietCungChuyenMuc;
+        $data->listAllBaiviet = $this->MBaiviet->getBaiGiayPhep($this->uri->segment(3), $config['per_page']);
+        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $this->load->view("layout_news", $data);
     }
 }

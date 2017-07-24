@@ -60,7 +60,7 @@ for ($i=0; $i<(count($line)); $i++) {
 }
 fclose($file_ip);
 
-if (!($found==1)) {
+/*if (!($found==1)) {*/
 $file_ip2 = fopen($path.'/counter/ip.txt', 'ab');
 
 $line = "$ip\n";
@@ -84,7 +84,7 @@ $file_count2 = fopen($path.'/counter/count.txt', 'wb');
 fwrite($file_count2, $line, strlen($line));
 fclose($file_count2);
 fclose($file_ip2);
-}
+/*}*/
 function today($path)
 {
     $file_count = fopen($path.'/counter/count.txt', 'rb');
@@ -94,8 +94,26 @@ function today($path)
     list($today, $yesterday, $total, $date, $days) = explode("%", $data);
     return $today;
 }
+function yesterday($path)
+{
+    $file_count = fopen($path.'/counter/count.txt', 'rb');
+    $data = '';
+    while (!feof($file_count)) $data .= fread($file_count, 4096);
+    fclose($file_count);
+    list($today, $yesterday, $total, $date, $days) = explode("%", $data);
+    return $yesterday;
+}
+function avg($path)
+{
+    $file_count = fopen($path.'/counter/count.txt', 'rb');
+    $data = '';
+    while (!feof($file_count)) $data .= fread($file_count, 4096);
+    fclose($file_count);
+    list($today, $yesterday, $total, $date, $days) = explode("%", $data);
+    return $total;
+}
 ?>
-<div class="col-xs-11 col-md-3 col-lg-3">
+<div class="col-xs-12 col-md-3 col-lg-3">
     <div id="myright">
         <h1>
             <p>TFV TƯ VẤN</p>
@@ -161,9 +179,11 @@ function today($path)
                 <img src="http://localhost/TFV_Project/public/images/contact.jpg" class=img-responsive" alt="contact" height="253" width="253"> </a>
         </div>
 
-        <div id="counter" >
-            <h4> <img src="http://localhost/TFV_Project/public/images/online.jpg" width="20px" height="20px"> Online: <?php echo online($path);?></h4>
-            <h4> <img src="http://localhost/TFV_Project/public/images/today.png" width="20px" height="20px"> Today: <?php echo today($path); ?></h4>
+        <div id="counter"  >
+            <div class="col-xs-6 col-md-6 col-lg-6" ><h4> <img src="http://localhost/TFV_Project/public/images/online.jpg" width="20px" height="20px"> Online: <?php echo online($path);?></h4> </div>
+            <div class="col-xs-6 col-md-6 col-lg-6" ><h4> <img src="http://localhost/TFV_Project/public/images/today.png" width="20px" height="20px"> Hôm nay: <?php echo today($path); ?></h4> </div>
+            <div class="col-xs-6 col-md-6 col-lg-6" ><h4> <img src="http://localhost/TFV_Project/public/images/yesterday.png" width="20px" height="20px"> Hôm qua: <?php echo yesterday($path); ?></h4> </div>
+            <div class="col-xs-6 col-md-6 col-lg-6" ><h4> <img src="http://localhost/TFV_Project/public/images/total.png" width="20px" height="20px"> Tổng: <?php echo avg($path); ?></h4> </div>
         </div>
     </div>
 </div>

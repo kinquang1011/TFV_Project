@@ -5,7 +5,7 @@
             <div class="col-xs-12 col-md-4 col-lg-4">
                 <h2>Giới Thiệu</h2>
                 <ul>
-                    <p style="color: #F0FFFF;">TFV là một trong những đơn vị tư vấn hàng đầu trong p̃nh vực
+                    <p style="color: #F0FFFF;">TFV là một trong những đơn vị tư vấn hàng đầu trong lĩnh vực
                         thực phẩm.
                         Chúng tôi luôn tự hào là nơi mang tới sự tin cậy cho khách hàng.</p>
                 </ul>
@@ -15,9 +15,8 @@
                 <ul>
                     <p style="color: #F0FFFF;">Văn phòng TP.HCM:</p>
                     <p style="color: #F0FFFF;">102 Quốc Hương, phường Thảo Điền, quận 2</p>
-                    <p style="color: #F0FFFF;">Hostpne: 0984.331.766</p>
-                    <p style="color: #F0FFFF;"><font face="verdana" color="Highlight">Copyright © 2015 TFV
-                            Consultant</font></p>
+                    <p id ="phone">Hostpne: 0984.331.766</p>
+                    <p id ="Consultant">Copyright © 2015 TFV Consultant </p>
 
                 </ul>
 
