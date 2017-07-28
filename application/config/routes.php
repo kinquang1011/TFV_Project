@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "welcome";
-$route['404_override'] = '';
+$route['404_override'] = 'Notfound';
 $route['^home/trang-chu$'] = '/home/index';
 $route['^home/tin-tuc$'] = '/home/index2';
 $route['baiviet/(:any)'] = "home/baiviet"  ;

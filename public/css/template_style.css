@@ -52,7 +52,7 @@ ul p:hover{
 
 #mybody{
 	background-color: Honeydew;
- 	/*padding-top: 70px;*/
+ 	padding-top: 15px;
 }
 
 #myheader{
@@ -120,7 +120,7 @@ ul p:hover{
 }
 @media only screen and  (min-width: 768px) {
 	#menutfv {
-		font-size: 9px;
+		font-size: 8px;
 	}
 	#navbarCollapse{
 		margin-left:6%;
@@ -139,9 +139,10 @@ ul p:hover{
 		margin-left: 160px;
 	}
 }
-@media only screen and  (min-width: 1024px){
+@media only screen and  (min-width: 1200px){
 	#menutfv {
 		font-size: 14px;
+		margin-left: -100px;
 	}
 	#navbarCollapse{
 		margin-left:15%;
@@ -276,7 +277,6 @@ margin-bottom: 10px;
 	font-weight: italic;
 	margin-left: 160px;
 }
-
 #mycontentarticle{
 	margin-left: 20px;
 }
@@ -354,6 +354,7 @@ margin-bottom: 10px;
 	color: red;
 	margin-left: 10px;
 	font-family:'Cookie',cursive;
+	min-height: 100px;
 }
 #myfooter {
 	/*background: url("http://giayphepthucpham.vn/public/images/v1.jpeg") no-repeat scroll center top / 100% 100%;*/
@@ -433,4 +434,12 @@ margin-bottom: 10px;
 }
 .carousel-inner .item  img{
 	margin:auto auto;
+}
+#Consultant{
+	font-size: 16px;
+	color: red;
+}
+#phone{
+	font-size: 16px;
+	color: rgba(3, 27, 83, 0.97);
 }

@@ -2,9 +2,17 @@
 <div class="col-xs-12 col-md-6 col-lg-6">
     <div id="mygroup" class="col-xs-12 col-md-11 col-lg-11">
         <h1>
+            <?php
+            if(strcmp($defHome,"Home")==0){?>
+            <a href='<?php echo base_url() . "home/".mb_strtolower(url_title(removesign($danhMucCon['Name']))) ?>'>
+                <p><?php echo($danhMucCon['Name']); ?></p>
+            </a>
+            <?php }
+            else {?>
             <a href='<?php echo base_url() . "home/tin-tuc-danh-muc/" . $danhMucCon['CodeSubCatalogy'] ?>'>
                 <p><?php echo($danhMucCon['Name']); ?></p>
             </a>
+            <?php } ?>
         </h1>
         <div id="mymainarticle">
             <?php if ($listBaiviet == null) {
@@ -51,4 +59,3 @@
         </div>
     </div>
 </div>
-<!--End my post content-->

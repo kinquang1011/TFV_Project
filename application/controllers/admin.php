@@ -19,9 +19,9 @@ class Admin extends CI_Controller
         if ($this->is_logged_in()) {
             $data->menu = $this->MDanhmuc->getAllDanhmuc();
             $data->title = "Trang quản lý bài viết";
-            $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[2]['CodeCatalogy']);
+            $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[1]['CodeCatalogy']);
             /*$data->listBaiViet = $this->MBaiviet->getBaiVietBySubC($data->listDanhMucCon[0]['CodeSubCatalogy']);*/
-            $data->listBaiViet = $this->MBaiviet->getBaiVietBySubC("CSC01");
+            $data->listBaiViet = $this->MBaiviet->getBaiVietBySubC("CSC18");
             $this->load->view("vAdmin", $data);
         } else {
             $data->title = "Trang Đăng Nhập";
@@ -185,7 +185,7 @@ class Admin extends CI_Controller
     {
         $data->title = "Thêm Bài Viết";
         $data->menu = $this->MDanhmuc->getAllDanhmuc();
-        $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[2]['CodeCatalogy']);
+        $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[1]['CodeCatalogy']);
         $this->load->view("vAddArticle", $data);
     }
 

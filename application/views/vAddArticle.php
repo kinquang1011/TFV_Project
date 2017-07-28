@@ -77,7 +77,7 @@
                                                 <label>Catalogy: </label>
                                                 <select id="uniqueId" name="Catalogy" class="optional overall classes" onchange="level2(this.value)">
                                                     <?php
-                                                    for($i =2; $i<count($menu); $i++)
+                                                    for($i =1; $i<count($menu)-1; $i++)
                                                     {
                                                         ?>
                                                         <option value='<?php echo$menu[$i]['CodeCatalogy'] ?>'><?php echo $menu[$i]['Name']; ?></option>

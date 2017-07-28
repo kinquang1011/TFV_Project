@@ -9,7 +9,7 @@
             $src = $xpath->evaluate("string(//img/@src)");
             ?>
             <?php if ($src == "") { ?>
-                <img src="" alt="image" class='resize_fit_center'/>
+                <img src="http://giayphepthucpham.vn/public/images/cat04.jpg" alt="image" class='resize_fit_center'/>
             <?php } else { ?>
                 <img src="<?php echo $src ?>" alt="image" class='resize_fit_center'/><?php } ?>
         </div>

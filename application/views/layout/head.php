@@ -7,6 +7,9 @@
  */?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Giấy Phép Thực Phẩm"/>
+<meta name="keywords" content="Giay Phep Thuc Pham Van Ban Phap Luat, An Toan Thuc Pham,Cong Bo Thuc Pham" />
+<meta name="robots" content="all,index,follow"/>
 <link rel="icon" href="http://localhost/TFV_Project/public/images/tfv.png" type="image/png">
 <link href="http://localhost/TFV_Project/public/css/template_style.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="http://localhost/TFV_Project/public/css/bootstrap.min.css">

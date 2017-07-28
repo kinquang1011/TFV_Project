@@ -6,10 +6,12 @@
         if (!$listBaiVietByDanhMucCon[$i]) {
             $container->listBaiviet = false;
             $container->danhMucCon = $listDanhMucCon[$i];
+            $container->defHome = $defHome;
             $this->load->view("layout/group", $container);
         } else {
             $container->listBaiviet = $listBaiVietByDanhMucCon[$i];
             $container->danhMucCon = $listDanhMucCon[$i];
+            $container->defHome = $defHome;
             $this->load->view("layout/group", $container);
         }
     } ?>

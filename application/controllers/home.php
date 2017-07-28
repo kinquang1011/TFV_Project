@@ -18,6 +18,7 @@ class Home extends CI_Controller
     {
         $data->title = "Trang chủ";
         $data->menu = $this->MDanhmuc->getAllDanhmuc();
+
         //print_r($data->menu);
         for ($i = 2; $i < count($data->menu) - 1; $i++) {
             $data->listDanhMucCon[$i - 2] = $data->menu[$i];
@@ -29,6 +30,7 @@ class Home extends CI_Controller
         }
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy("CC06");
         $data->loadRightArticle = $this->MBaiviet->getRandomBaiViet();
+        $data->defHome= 'Home';
         $this->load->view("layout_group", $data);
     }
 
@@ -85,6 +87,7 @@ class Home extends CI_Controller
         }
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy("CC03");
         $data->loadRightArticle = $this->MBaiviet->getRandomBaiViet();
+        $data->defHome= '';
         $this->load->view("layout_group", $data);
     }
 
@@ -100,6 +103,7 @@ class Home extends CI_Controller
         }
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy("CC06");
         $data->loadRightArticle = $this->MBaiviet->getRandomBaiViet();
+        $data->defHome= '';
         $this->load->view("layout_group", $data);
     }
 
@@ -145,6 +149,7 @@ class Home extends CI_Controller
 
             }
         }*/
+        $data->defHome= '';
         $this->load->view("layout_group", $data);
     }
 
@@ -160,6 +165,7 @@ class Home extends CI_Controller
 
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy("CC05");
         $data->loadRightArticle = $this->MBaiviet->getRandomBaiViet();
+        $data->defHome= '';
         $this->load->view("layout_group", $data);
     }
     public function giayphep(){
@@ -178,6 +184,7 @@ class Home extends CI_Controller
         $data->loadRightArticle = $data->baiVietCungChuyenMuc;
         $data->listAllBaiviet = $this->MBaiviet->getBaiGiayPhep($this->uri->segment(3), $config['per_page']);
         $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $data->defHome= '';
         $this->load->view("layout_news", $data);
     }
 }

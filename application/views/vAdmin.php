@@ -27,7 +27,7 @@
 <body>
 <div id="mybody">
     <!-- Ajax to load SubCatalogy for insert data to db -->
-    <script language="javascript"><!--
+    <script language="javascript">
             function createObject() {
                 var request_type;
                 var browser = navigator.appName;
@@ -85,7 +85,7 @@
         }
     </script>
     <!-- Script Delete -->
-    <script language="javascript"><!--
+    <script language="javascript">
             function createObject() {
                 var request_type;
                 var browser = navigator.appName;
@@ -136,7 +136,7 @@
                                             <?php if(isset($codeCatalogy)){?>
                                                 <select id="optCatalogy" name="fieldName" class="optional overall classes" onchange="level2(this.value)">
                                                     <?php
-                                                    for($i =2; $i<count($menu); $i++)
+                                                    for($i =1; $i<count($menu)-1; $i++)
                                                     {
                                                         ?>
                                                         <option value="<?php echo $menu[$i]['CodeCatalogy'] ?>"<?php if( $menu[$i]['CodeCatalogy'] == $codeCatalogy ): ?> selected="selected"<?php endif; ?>><?php echo $menu[$i]['Name']; ?></option>
@@ -146,7 +146,7 @@
 
                                                 <select id="optCatalogy" name="fieldName" class="optional overall classes" onchange="level2(this.value)">
                                                     <?php
-                                                    for($i =2; $i<count($menu); $i++)
+                                                    for($i =1; $i<count($menu)-1; $i++)
                                                     {
                                                         ?>
                                                         <option value="<?php echo $menu[$i]['CodeCatalogy'] ?>"><?php echo $menu[$i]['Name']; ?></option>
