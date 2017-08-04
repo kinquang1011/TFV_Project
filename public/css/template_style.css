@@ -97,6 +97,14 @@ ul p:hover{
 		margin-top: -120px;
 		margin-left: 110px;
 	}
+	#newest {
+		border-top: 5px solid green;
+		border-left: 2px solid green;
+		border-right: 5px solid green;
+		border-bottom: 2px solid green;
+		min-height: 250px;
+		text-align: left;
+	}
 }
 @media only screen and  (min-width: 600px) {
 	/*#mycontentarticle img{
@@ -115,6 +123,14 @@ ul p:hover{
 		color: blue;
 		margin-top: -100px;
 		margin-left: 160px;
+	}
+	#newest {
+		border-top: 5px solid green;
+		border-left: 2px solid green;
+		border-right: 5px solid green;
+		border-bottom: 2px solid green;
+		min-height: 200px;
+		text-align: left;
 	}
 
 }
@@ -138,6 +154,14 @@ ul p:hover{
 		margin-top: -100px;
 		margin-left: 160px;
 	}
+	#newest {
+		border-top: 5px solid green;
+		border-left: 2px solid green;
+		border-right: 5px solid green;
+		border-bottom: 2px solid green;
+		min-height: 200px;
+		text-align: left;
+	}
 }
 @media only screen and  (min-width: 1200px){
 	#menutfv {
@@ -159,6 +183,15 @@ ul p:hover{
 		color: blue;
 		margin-top: -100px;
 		margin-left: 160px;
+	}
+	#newest {
+		border-top: 5px solid green;
+		border-left: 2px solid green;
+		border-right: 5px solid green;
+		border-bottom: 2px solid green;
+		min-height: 200px;
+		margin-left: 25%;
+		text-align: left;
 	}
 }
 .title_tintuc {
@@ -182,6 +215,7 @@ ul p:hover{
 #container_ly {
 margin-bottom: 10px;
 }
+
 #mygroup{
 	border-top: 5px solid Honeydew;
 	border-left: 2px solid green;
@@ -202,7 +236,7 @@ margin-bottom: 10px;
 	margin: 0 0 20px 0;
 	font-size: 16px;
 	color: #cbc750;
-	background: url(http://localhost/TFV_Project/public/images/title.png);
+	background: url(http://giayphepthucpham.vn/public/images/titlexxx.png);
 	box-shadow: 0 6px 20px #AAAAAA;
 }
 
@@ -312,7 +346,7 @@ margin-bottom: 10px;
 	margin: 0 0 20px 0;
 	font-size: 15px;
 	color: #cbc750;
-	background: url(http://localhost/TFV_Project/public/images/title.png);
+	background: url(http://giayphepthucpham.vn/public/images/titlexxx.png);
 	box-shadow: 0 6px 20px #AAAAAA;
 
 }
@@ -335,6 +369,7 @@ margin-bottom: 10px;
 
 #myrightgroup{
 	height: auto;
+
 }
 
 #myrightarticle{
@@ -344,6 +379,7 @@ margin-bottom: 10px;
 #myrightcontact{
 	height:253px;
 	width:253px;
+	margin: auto;
 }
 
 #myrightboss{
@@ -440,6 +476,6 @@ margin-bottom: 10px;
 	color: red;
 }
 #phone{
-	font-size: 16px;
-	color: rgba(3, 27, 83, 0.97);
+	font-size: 20px;
+	color: #FFEB3B;
 }

@@ -3,13 +3,13 @@
 <head>
     <title><?php echo $title ?></title>
     <?php $this->load->view("layout/head"); ?>
-    <!--<link rel="icon" href="http://localhost/TFV_Project/public/images/tfv.png" type="image/png">
+    <!--<link rel="icon" href="http://giayphepthucpham.vn/public/images/tfv.png" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="http://localhost/TFV_Project/public/css/template_style.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="http://localhost/TFV_Project/public/css/bootstrap.min.css">
+    <link href="http://giayphepthucpham.vn/public/css/template_style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="http://giayphepthucpham.vn/public/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="http://localhost/TFV_Project/public/js/mainsidebar.js"></script>-->
+    <script src="http://giayphepthucpham.vn/public/js/mainsidebar.js"></script>-->
 </head>
 <body>
 <div id="mybody">
@@ -32,7 +32,7 @@
 </div>
 
 <!-- 3@ End of MYCONTAINER-->
-
+<?php $this->load->view("layout/seo"); ?>
 <?php $this->load->view("layout/bot"); ?>
 
 </div>

@@ -19,6 +19,13 @@ class MBaiviet extends CI_Model
         return $query->result_array();
     }
 
+    public function getNewestBaiViet()
+    {
+        $strsql = "SELECT ID,Title,DateTime FROM baiviet order by DateTime desc limit 5";
+        $query = $this->db->query($strsql);
+        return $query->result_array();
+    }
+
     public function getBaiGiayPhep($offset, $number)
     {
         if ($offset == "") {

@@ -12,26 +12,38 @@ class Home extends CI_Controller
         $this->load->model("MDanhmuccon");
         $this->load->model("MBaiviet");
     }
-
+    public function sortMenu($menu){
+        $newMenu['0'] = $menu['0'];
+        $newMenu['1'] = $menu['6'];
+        $newMenu['2'] = $menu['1'];
+        $newMenu['3'] = $menu['2'];
+        $newMenu['4'] = $menu['3'];
+        $newMenu['5'] = $menu['4'];
+        $newMenu['6'] = $menu['5'];
+        return $newMenu;
+    }
     //Trang chủ
     public function index()
     {
         $data->title = "Trang chủ";
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
 
         //print_r($data->menu);
-        for ($i = 2; $i < count($data->menu) - 1; $i++) {
-            $data->listDanhMucCon[$i - 2] = $data->menu[$i];
+
+        for ($i = 3; $i < count($data->menu); $i++) {
+            $data->listDanhMucCon[$i - 3] = $data->menu[$i];
         }
         //getBaiVietFromDanhMuc
 
         for ($i = 0; $i < count($data->listDanhMucCon); $i++) {
             $data->listBaiVietByDanhMucCon[$i] = $this->MBaiviet->getBaiVietFromDanhMuc($data->listDanhMucCon[$i]['CodeCatalogy']);
         }
+        $data->newestBaiviet= $this->MBaiviet->getNewestBaiViet();
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy("CC06");
         $data->loadRightArticle = $this->MBaiviet->getRandomBaiViet();
         $data->defHome= 'Home';
-        $this->load->view("layout_group", $data);
+        $this->load->view("layout_home", $data);
     }
 
     public function index2()
@@ -50,7 +62,8 @@ class Home extends CI_Controller
         $data->baiVietCungChuyenMuc = $this->MBaiviet->getBaiVietCungChuyenMuc("CSC17", "0");
         $data->loadRightArticle = $data->baiVietCungChuyenMuc;
         $data->listAllBaiviet = $this->MBaiviet->getAllBaiViet($this->uri->segment(3), $config['per_page']);
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
         $this->load->view("layout_news", $data);
     }
 
@@ -70,7 +83,8 @@ class Home extends CI_Controller
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy($getDataCatalogy[0]['CodeCatalogy']);
         $data->loadRightArticle = $this->MBaiviet->getRightBaiViet($codeSub);
         $data->listAllBaiviet = $this->MBaiviet->getAllBaiViet2($codeSub, $this->uri->segment(4), $config['per_page']);
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
         $this->load->view("layout_news", $data);
 
     }
@@ -79,7 +93,9 @@ class Home extends CI_Controller
     {
         $data->title = "Văn bản pháp luật kinh doanh";
 
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
+        var_dump($data->menu[2]['CodeCatalogy']);exit();
         $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[2]['CodeCatalogy']);
         // count($data->listDanhMucCon) = 4 || 6
         for ($i = 0; $i < count($data->listDanhMucCon); $i++) {
@@ -95,7 +111,8 @@ class Home extends CI_Controller
     {
         $data->title = "Dịch vụ khác";
 
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
         $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[5]['CodeCatalogy']);
         // count($data->listDanhMucCon) = 4 || 6
         for ($i = 0; $i < count($data->listDanhMucCon); $i++) {
@@ -111,11 +128,13 @@ class Home extends CI_Controller
     {
 
         $baiViet = $this->MBaiviet->getBaiVietById($idBaiviet);
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
-        $data->title = "Baiviet";
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
+        $data->title = $baiViet->Title." - TFV Consultant";
         $Id = $baiViet->ID;
         $codeSubCatalogy = $baiViet->CodeSubCatalogy;
         $data->baiViet = $baiViet;
+
         $getDataCatalogy = $this->MDanhmuccon->getAllDanhMucConByCodeSub($codeSubCatalogy);
         $data->loadRightItem = $this->MDanhmuccon->getRandomDanhMucConByCodeCatalogy($getDataCatalogy[0]['CodeCatalogy']);
         $data->baiVietCungChuyenMuc = $this->MBaiviet->getBaiVietCungChuyenMuc($codeSubCatalogy, $Id);
@@ -126,7 +145,8 @@ class Home extends CI_Controller
     public function antoanthucpham()
     {
         $data->title = "An Toàn Thực Phẩm";
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
         $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[3]['CodeCatalogy']);
         // count($data->listDanhMucCon) = 4 || 6
         for ($i = 0; $i < count($data->listDanhMucCon); $i++) {
@@ -156,7 +176,8 @@ class Home extends CI_Controller
     public function congbothucpham()
     {
         $data->title = "Công bố Thực Phẩm";
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
         $data->listDanhMucCon = $this->MDanhmuccon->getDanhMucConByCodeC($data->menu[4]['CodeCatalogy']);
         // count($data->listDanhMucCon) = 4 || 6
         for ($i = 0; $i < count($data->listDanhMucCon); $i++) {
@@ -169,11 +190,12 @@ class Home extends CI_Controller
         $this->load->view("layout_group", $data);
     }
     public function giayphep(){
-        $data->title = "Giấy phép thực phẩm";
+        $this->load->view("test2");
+        /*$data->title = "Giấy phép thực phẩm";
         $this->load->library('pagination');
         $this->load->helper('url');
 
-        $config['base_url'] = base_url('home/tin-tuc'); // xác định trang phân trang
+        $config['base_url'] = base_url('home/giay-phep'); // xác định trang phân trang
         $config['total_rows'] = $this->MBaiviet->countTinTuc(); // xác định tổng số record
         $config['per_page'] = 6; // xác định số record ở mỗi trang
         $config['uri_segment'] = 3; // xác định segment chứa page number
@@ -183,8 +205,9 @@ class Home extends CI_Controller
         $data->baiVietCungChuyenMuc = $this->MBaiviet->getBaiVietCungChuyenMuc("CSC18", "0");
         $data->loadRightArticle = $data->baiVietCungChuyenMuc;
         $data->listAllBaiviet = $this->MBaiviet->getBaiGiayPhep($this->uri->segment(3), $config['per_page']);
-        $data->menu = $this->MDanhmuc->getAllDanhmuc();
+        $menuDb = $this->MDanhmuc->getAllDanhmuc();
+        $data->menu = $this->sortMenu($menuDb);
         $data->defHome= '';
-        $this->load->view("layout_news", $data);
+        $this->load->view("layout_news", $data);*/
     }
 }

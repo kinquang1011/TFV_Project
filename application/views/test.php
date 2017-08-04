@@ -52,7 +52,7 @@ function online($path)
 ///////////////////////
 $ip = $_SERVER['REMOTE_ADDR'];
 
-$file_ip = fopen($path.'/counter/ip.txt', 'rb');
+$file_ip = fopen($path.'\counter\p.txt', 'rb');
 
 while (!feof($file_ip)) $line[]=fgets($file_ip,1024);
 for ($i=0; $i<(count($line)); $i++) {
@@ -61,7 +61,7 @@ for ($i=0; $i<(count($line)); $i++) {
 }
 fclose($file_ip);
 
-/*if (!($found==1)) {*/
+if (!($found==1)) {
     $file_ip2 = fopen($path.'/counter/ip.txt', 'ab');
 
     $line = "$ip\n";
@@ -85,7 +85,7 @@ fclose($file_ip);
     fwrite($file_count2, $line, strlen($line));
     fclose($file_count2);
     fclose($file_ip2);
-/*}*/
+}
 
 
 function today($path)

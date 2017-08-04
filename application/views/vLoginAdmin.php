@@ -3,7 +3,7 @@
 <head>
 	<title><?php echo $title?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="http://localhost/TFV_Project/public/css/login.css" rel="stylesheet" type="text/css" />
+	<link href="http://giayphepthucpham.vn/public/css/login.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
